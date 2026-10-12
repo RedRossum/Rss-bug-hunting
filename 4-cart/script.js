@@ -77,7 +77,7 @@ function clearCart() {
 
 function renderCart() {
   cartItemsEl.innerHTML = "";
-  let total = "";
+  let total = 0; //#6
   cart.forEach((item) => {
     const lineTotal = item.price * item.qty; //#5
     const li = document.createElement("li");
