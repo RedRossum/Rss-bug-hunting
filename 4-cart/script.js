@@ -35,6 +35,12 @@ function addToCart(id) {
   if (!product) {
     return;
   }
+  const cartItem = cart.find((item) => item.id === id); //#2
+  if (cartItem) {
+    cartItem.qty++;
+    renderCart();
+    return;
+  }
   cart.push({ id: product.id, name: product.name, price: product.price, qty: 1 });
   renderCart();
 }
