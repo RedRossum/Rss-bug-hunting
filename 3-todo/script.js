@@ -13,7 +13,7 @@ let nextId = 1;
 function addTask() {
   const text = input.value;
 
-  if (!text.trim()) return (errorEl.hidden = false);
+  if (!text.trim()) return (errorEl.hidden = false); //#2
 
   errorEl.hidden = true;
   tasks.push({ id: nextId++, text: text, done: false });
@@ -47,7 +47,7 @@ function updateCounter() {
 
 function render() {
   const visible = getVisibleTasks();
-  for (let i = 1; i <= visible.length; i++) {
+  for (let i = 0; i < visible.length; i++) { //#3
     const task = visible[i];
     const li = document.createElement("li");
     li.className = "task";
@@ -72,7 +72,7 @@ function render() {
   updateCounter();
 }
 
-addBtn.addEventListener("click", addTask);
+addBtn.addEventListener("click", addTask); //#1
 clearBtn.addEventListener("click", clearCompleted);
 
 filterButtons.forEach((btn) => {
