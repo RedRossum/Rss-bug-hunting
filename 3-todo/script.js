@@ -12,6 +12,9 @@ let nextId = 1;
 
 function addTask() {
   const text = input.value;
+
+  if (!text.trim()) return (errorEl.hidden = false);
+
   errorEl.hidden = true;
   tasks.push({ id: nextId++, text: text, done: false });
   input.value = "";
