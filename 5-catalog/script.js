@@ -27,7 +27,7 @@ function getFiltered() {
   }
 
   if (category !== "all") {
-    result = products.filter((p) => p.category === category); //#5
+    result = result.filter((p) => p.category === category); //#5#8
   }
 
   if (sort === "asc") {
